@@ -9,13 +9,14 @@ void solve(float h,float *y,int n)
 {
     float ans=y[0]+y[n];
     float sumo=0,sume=0;
-    for(int i=1;i<n;i+=2)
+    int j=1;
+    while(j<n)
     {
-        sumo+=y[i];
-    }
-    for(int i=2;i<n;i+=2)
-    {
-        sume+=y[i];
+        if(j%2==0)
+            sume+=y[j];
+        else
+            sumo+=y[j];
+        j++;
     }
     sumo*=4;
     sume*=2;
